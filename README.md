@@ -21,8 +21,3 @@ Les images (logo, captures d'écran) sont embarquées directement dans les
 pages HTML (encodées en base64) : aucun fichier image séparé à gérer, et
 aucun lien cassé possible.
 
-## Lien avec l'application
-
-Ce dépôt est volontairement séparé du dépôt de l'application
-(`AbdelmajidBH/zagori-vite`, privé) : GitHub Pages gratuit exige un dépôt
-**public**, alors que le code de l'application reste privé.

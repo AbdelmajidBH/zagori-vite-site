@@ -46,7 +46,19 @@ const services = [
 
 const PHONE = '0679003001';
 const WHATSAPP = '212679003001';
+const PLAY_URL = 'https://play.google.com/store/apps/details?id=ma.zagorivite.app';
 const waHref = (text) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;
+
+const playIcon = `<svg viewBox="0 0 512 512" aria-hidden="true"><path fill="#00E5FF" d="M99 21c-14 8-23 23-23 40v390c0 17 9 32 23 40l231-235z"/><path fill="#FFC107" d="M99 21l289 165-77 78z"/><path fill="#FF3D00" d="M99 491l289-165-77-78z"/><path fill="#00C853" d="M311 256l77-78-289-165c-2 1-5 3-7 4z"/></svg>`;
+const playButton = `
+        <a class="btn btn-play" href="${PLAY_URL}" target="_blank" rel="noopener">
+          ${playIcon}
+          <span class="play-text">
+            <small data-fr>Disponible sur</small>
+            <small data-ar>متوفر على</small>
+            <strong>Google Play</strong>
+          </span>
+        </a>`;
 
 const servicesHtml = services.map((s) => `
         <div class="service-card">
@@ -97,6 +109,8 @@ const html = `<!doctype html>
         <a class="btn btn-orange" href="tel:${PHONE}"><span data-fr>Appeler</span><span data-ar>اتصل</span></a>
         <a class="btn btn-whatsapp" href="${waHref('السلام عليكم زاكوري فيت، أريد أن أضع طلباً. هذا ما أحتاجه: ')}" data-ar target="_blank" rel="noopener">واتساب</a>
         <a class="btn btn-whatsapp" href="${waHref("Bonjour Zagori Vite, je souhaite passer une commande. Voici ce qu'il me faut : ")}" data-fr target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <div class="btn-row" style="margin-top:12px;">${playButton}
       </div>
       <div class="pill">
         <span>📍</span>
@@ -167,13 +181,13 @@ const html = `<!doctype html>
 <section>
   <div class="container">
     <div class="cta">
-      <div class="soon-badge" data-fr>Application Android — bientôt sur Google Play</div>
-      <div class="soon-badge" data-ar>تطبيق أندرويد — قريباً على Google Play</div>
-      <h2 data-fr>En attendant, commandez directement</h2>
-      <h2 data-ar>في انتظار ذلك، اطلب مباشرة</h2>
-      <p data-fr>Appelez-nous ou écrivez sur WhatsApp : même service, sans attendre l'application.</p>
-      <p data-ar>اتصل بنا أو راسلنا على واتساب: نفس الخدمة، دون انتظار التطبيق.</p>
-      <div class="btn-row">
+      <h2 data-fr>Téléchargez l'application</h2>
+      <h2 data-ar>حمّل التطبيق</h2>
+      <p data-fr>Ou appelez-nous / écrivez sur WhatsApp : même service, sans passer par l'application.</p>
+      <p data-ar>أو اتصل بنا / راسلنا على واتساب: نفس الخدمة، دون المرور عبر التطبيق.</p>
+      <div class="btn-row">${playButton}
+      </div>
+      <div class="btn-row" style="margin-top:14px;">
         <a class="btn btn-orange" href="tel:${PHONE}"><span data-fr>Appeler</span><span data-ar>اتصل</span> · ${PHONE}</a>
         <a class="btn btn-whatsapp" href="${waHref('السلام عليكم زاكوري فيت، أريد أن أضع طلباً. هذا ما أحتاجه: ')}" data-ar target="_blank" rel="noopener">واتساب</a>
         <a class="btn btn-whatsapp" href="${waHref("Bonjour Zagori Vite, je souhaite passer une commande. Voici ce qu'il me faut : ")}" data-fr target="_blank" rel="noopener">WhatsApp</a>
